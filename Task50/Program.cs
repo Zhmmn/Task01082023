@@ -19,14 +19,8 @@ public class Answer
     {
       for (int j = 0; j < matrix.GetLength(1); j++)
       {
-        if (j == 0)
         {
-          Console.Write($"{matrix[i, j],0}");
-
-        }
-        else
-        {
-          Console.Write($"{matrix[i, j],12}");
+          Console.Write($"{matrix[i, j]}" + "\t");
         }
       }
       Console.WriteLine("");
