@@ -17,10 +17,17 @@ public class Answer
     // Введите свое решение ниже
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
-      Console.Write("");
       for (int j = 0; j < matrix.GetLength(1); j++)
       {
-        Console.Write($"{matrix[i, j],6}");
+        if (j == 0)
+        {
+          Console.Write($"{matrix[i, j],0}");
+
+        }
+        else
+        {
+          Console.Write($"{matrix[i, j],12}");
+        }
       }
       Console.WriteLine("");
     }
@@ -58,7 +65,7 @@ public class Answer
       return new int[] { 0 }; // Возвращаем массив с нулевым значением, чтобы показать ошибку
     }
 
-    int number = matrix[rowPosition, columnPosition];
+    int number = matrix[rowPosition - 1, columnPosition - 1];
 
     return new int[] { number }; // Возвращаем массив с значением числа в указанной позиции
 
