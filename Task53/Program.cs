@@ -17,32 +17,32 @@ int[,] CreateMatrixRndint(int rows, int columns, int min, int max)
   return matrix;
 }
 
-void ReplaceFirstAndLastLists(int{,} arr)
+void ReplaceFirstAndLastLists(int[,] arr)
 {
-int firstRow = 0;
-int lastRow = arr.GetLength(0) - 1;
-int columns = arr.GetLength(1);
+  int firstRow = 0;
+  int lastRow = arr.GetLength(0) - 1;
+  int columns = arr.GetLength(1);
 
-for (int j = 0; j < columns; j++)
-{
-  int temp = arr[firstRow, j];
-  arr[firstRow, j] = arr[lastRow, j];
-  arr[lastRow, j] = temp;
-}
-}
-void PrintArray(int{,} matrix)
-{
-  int rows = matrix.GetLength(0);
-int columns = matrix.GetLength(1);
-
-for (int i = 0; i < rows; i++)
-{
   for (int j = 0; j < columns; j++)
   {
-    Console.WriteLine($" {matrix[i, j],5}");
+    int temp = arr[firstRow, j];
+    arr[firstRow, j] = arr[lastRow, j];
+    arr[lastRow, j] = temp;
   }
-  Console.WriteLine();
 }
+void PrintArray(int[,] matrix)
+{
+  int rows = matrix.GetLength(0);
+  int columns = matrix.GetLength(1);
+
+  for (int i = 0; i < rows; i++)
+  {
+    for (int j = 0; j < columns; j++)
+    {
+      Console.Write($"{matrix[i, j]} " + " \t");
+    }
+    Console.WriteLine("");
+  }
 }
 
 int[,] matrix = CreateMatrixRndint(5, 5, 0, 10);
