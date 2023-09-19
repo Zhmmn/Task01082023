@@ -7,7 +7,7 @@
 // 5 2 6 7
 // Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 1 строка
 
-int[,] RowSmallestSumOfElements(int[,] mtx)
+int RowSmallestSumOfElements(int[,] mtx)
 {
   int rows = mtx.GetLength(0);
   int columns = mtx.GetLength(1);
@@ -28,10 +28,7 @@ int[,] RowSmallestSumOfElements(int[,] mtx)
     }
 
   }
-  {
-    Console.WriteLine($"Строка с наименьшей суммой элементов =>" + minRow);
-  }
-  return mtx;
+  return minRow;
 }
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
@@ -64,4 +61,5 @@ void PrintMatrix(int[,] matrix)
 int[,] matrix = CreateMatrixRndInt(3, 3, 1, 10);
 PrintMatrix(matrix);
 Console.WriteLine();
-int[,] mtx = RowSmallestSumOfElements(matrix);
+int row = RowSmallestSumOfElements(matrix);
+Console.WriteLine($"Строка с наименьшей суммой элементов =>" + row);
