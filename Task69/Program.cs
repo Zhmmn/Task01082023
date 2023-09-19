@@ -10,12 +10,13 @@ int Prompt(string message)
   return value;
 }
 
-void Validation(int num)
+int Validation(int num)
 {
   while (num < 1)
   {
-    num = Prompt("Неверно введено число. Введите целочисленное число: ");
+    num = Prompt("Неверно введено число. Введите натуральное число: ");
   }
+  return num;
 }
 
 int Exponentiation(int firstNumber, int secondNumber) // 1.1)3.5; 2.1)3.4; 3.1)3.3; 4.1)3.2; 5.1) 3.1
@@ -27,7 +28,7 @@ int Exponentiation(int firstNumber, int secondNumber) // 1.1)3.5; 2.1)3.4; 3.1)3
 
 int firstNumber = Prompt("Введите первое число A: ");
 int secondNumber = Prompt("Введите второе число B: ");
-Validation(secondNumber);
+secondNumber = Validation(secondNumber);
 
 
 Console.WriteLine($"Число А в степени В равна {Exponentiation(firstNumber, secondNumber)}");
